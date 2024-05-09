@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block page_content %}
+  <h1>{{titulo}}</h1>
+  <br>
+  <form action="agregar_producto" method="post">
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="descripcion">Descripción</label>
+        <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Descripción del producto">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="valor_unitario">Valor Unitario</label>
+        <input type="text" class="form-control" id="valor_unitario" name="valor_unitario" placeholder="Valor unitario del producto">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="unidad_medida">Unidad de Medida</label>
+        <select id="unidad_medida" name="unidad_medida" class="form-control">
+          <option selected value="">Seleccione...</option>
+          <option>GRS</option>
+          <option>LTS</option>
+          <option>MLS</option>
+          <option>UND</option>
+          <option>PQT</option>
+        </select>
+      </div>
+    </div>
+   
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="cantidad_stock">Cantidad Stock</label>
+        <input type="number" class="form-control" id="cantidad_stock" name="cantidad_stock" placeholder="Cantidad stock">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="categoria">Categoria</label>
+        <select id="categoria" name="categoria" class="form-control">
+          <option selected value="">Seleccione...</option>
+          <option selected value="">Ropa</option>
+          <option selected value="">Calzado</option>
+        </select>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Crear</button>
+  </form>
+{% endblock %}
