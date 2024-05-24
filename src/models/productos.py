@@ -24,4 +24,4 @@ class Productos(Base):
     
     def obtener_productos():
       productos = session.query(Productos).all()
-      return productos    
+      return productos

@@ -12,3 +12,4 @@ Base.metadata.bind = engine
 Session = sessionmaker(bind=engine)
 
 session = Session()
+

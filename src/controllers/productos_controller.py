@@ -3,10 +3,16 @@ from src.app import app
 from src.models.productos import Productos
 from src.models.categorias import Categorias
 from flask_controller import FlaskController
+from flask_restful import Api
+from src.apis.productos_api import ProductosApi
 
 
 class ProductosController(FlaskController):
-    @app.route("/agregar_producto", methods=['GET','POST'])
+    api = Api(app)
+    
+    api.add_resource(ProductosApi, '/api/productos')
+    
+    @app.route("/agregar_producto", methods=['GET','POST'])    
     def agregar_producto():
         if request.method == 'POST':
             descripcion = request.form.get('descripcion')
