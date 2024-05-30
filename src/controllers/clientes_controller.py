@@ -8,6 +8,11 @@ class ClientesController(FlaskController):
     @app.route("/clientes")
     def clientes():
         return render_template('clientes.html', title="Lista de Clientes")
+    
+    @app.route("/clientes/<id>")
+    def cliente_por_id(id):
+        cliente = Clientes.obtener_cliente_por_id(id)
+        return cliente
 
     @app.route("/form_cliente")
     def form_cliente():

@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block page_content %}
+<h1>{{titulo}}</h1>
+<br>
+<table class="table">
+   <thead class="thead-dark">
+     <tr>
+       <th scope="col">Id</th>
+       <th scope="col">Fecha</th>
+       <th scope="col">Cliente</th>
+       <th scope="col">Controles</th>
+
+     </tr>
+   </thead>
+   <tbody>
+     {% for factura in facturas %}
+     
+         <tr>
+             <th scope="row">{{factura.id}}</th>
+             <td>{{factura.fecha}}</td>
+             <td>{{factura.cliente}}</td>
+             <td>
+               <button type="button" class="btn btn-info">Detalle</button>
+               <button type="button" class="btn btn-danger">Borrar</button>
+             </td>
+         </tr>
+      {% endfor %}
+   </tbody>
+ </table>
+{% endblock %}
